@@ -1,4 +1,6 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs18
+FROM python:3.9
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install ffmpeg -y
 COPY . /app/
